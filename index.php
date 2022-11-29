@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,55 +7,101 @@
     <title>Cadastro de clientes</title>
 </head>
 <body>
-    <h1>Cadastro de cliente</h1>
+    <h1>Cadastro de clientes</h1>
     <?php
-    $nome = "Francesco";
-    $idade = "32";
-    $fumante = "false";
+    $nome = "Guto";
+    $idade = 36;
+    $fumante = false;
     echo "<p>Id cliente: $nome <br>";
     echo "Idade cliente: $idade <br>";
     echo "Fumante: $fumante </p>";
-    /*
-        OPERADORES ARITMÉTICOS
-          -	Negação	-$a	Inverte o valor da variável
-          +	Soma	$a+$b	Soma o valor das duas variáveis
-          -	Subtração	$a-$b	Subtrai o valor de $b do valor de $a
-          *	Multiplicação	$a*$b	Multiplica o valor das duas variáveis
-          /	Divisão	$a/$b	Divide $a por $b
-          %	Módulo	$a%$b	Obtém o resto da divisão de $a por %b, por exemplo:5/4 = 2 (resto 1)
-          **	Exponencial	$a**$b	Eleva $a a $b, este operador somente está disponível a partir do PHP 5.6, é o equivalente a função pow($a, $b);
+    /* 
+    OPERADORES ARITMÉTICOS
     */
-
-    /*
-        OPERADORES RELACIONAIS
-            $a == $b	Igual (==)	Verdadeiro (TRUE) se $a é igual a $b.
-            $a === $b	Idêntico (===)	Verdadeiro (TRUE) se $a é igual a $b, e eles são do mesmo tipo.
-            $a != $b	Diferente (!=)	Verdadeiro se $a não é igual a $b.
-            $a <> $b	Diferente (<>)	Verdadeiro se $a não é igual a $b.
-            $a !== $b	Não idêntico (!==)	Verdadeiro de $a não é igual a $b, ou eles não são do mesmo tipo.
-            $a < $b	Menor que (<)	Verdadeiro se $a é menor que $b.
-            $a > $b	Maior que (>)	Verdadeiro se $a é maior que $b.
-            $a <= $b	Menor ou igual (<=)	Verdadeiro se $a é menor ou igual a $b.
-            $a >= $b	Maior ou igual (>=)	Verdadeiro se $a é maior ou igual a $b.
+    echo 20*3;
+    echo "<br>";
+    /* 
+    OPERADORES RELACIONAIS
     */
     echo 20>10;
     echo "<br>";
-    /*
-        OPERADORES LÓGICOS
+    /* 
+    OPERADORES LÓGICOS
     */
     echo "operadores lógicos<br>";
     $fumante = true;
     echo !$fumante;
 
-
-
-    $idade = 18;
+    $idade = 75;
     if($idade>=18 && $fumante == false){
         echo "<p>Sua idade é $idade </p>";
         echo "<p>Pode entrar na festa</p>";
+    }else if($idade >= 70){
+        echo "<p>Pessoas acima de 70 anos não podem entrar na festa</p>";
     }else{
-        echo "Voce não pode entrar";
-            }
+        echo "Você não pode entrar";
+    }
+
+    $nota = 3;
+    if($nota >= 8){
+        echo "<p>Aprovado</p>";
+    }else if($nota >= 5){
+        echo "<p>Recuperação</p>";
+    }else{
+        echo "<p>Reprovado</p>";
+    }
+
+
+    $idade = 15;
+    echo ($idade>=18) ? "pode entrar" : "rejeitado";
+
+    $cor = "vermelho";
+    switch ($cor) {
+        case 'azul':
+            echo "<p>Sua cor favorita é <b>AZUL</b></p>";
+            break;
+        
+        case 'verde':
+            echo "<p>Sua cor favorita é <b>VERDE</b></p>";
+            break;
+        
+        case 'vermelho':
+            echo "<p>Sua cor favorita é <b>VERMELHO</b></p>";
+            break;
+
+        default:
+            echo "<p>Sua cor favorita não é verde, nem azul e nem vermelho</p>";
+            break;
+    }
+
+    $dia = 3;
+    switch($dia){
+        case 1:
+            echo "Domingo";
+            break;
+        case 2:
+            echo "Segunda";
+            break;
+        case 3:
+            echo "Terça";
+            break;
+        case 4:
+            echo "Quarta";
+            break;
+        case 5:
+            echo "Quinta";
+            break;
+        case 6:
+            echo "Sexta";
+            break;
+        case 7:
+            echo "Sabado";
+            break;
+        default:
+            echo "dia inválido";
+            break;
+    }
+
     ?>
 </body>
 </html>
